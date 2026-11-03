@@ -1,4 +1,4 @@
-# تثبيت حزمة الفريق لـ Claude Code — Windows
+﻿# تثبيت حزمة الفريق لـ Claude Code — Windows
 # الاستخدام:  powershell -ExecutionPolicy Bypass -File install.ps1
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $ErrorActionPreference = 'Continue'
