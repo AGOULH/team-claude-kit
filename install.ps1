@@ -67,6 +67,6 @@ if ($fonts) {
     New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Fonts' -Name "$($f.BaseName) (TrueType)" -Value (Join-Path $FD $f.Name) -Force | Out-Null
   }
   Ok "الخطوط: $($fonts.Count) ملف"
-} else { Warn "لا توجد خطوط في fonts\ — ضع ملفات GE SS Two هناك وأعد التشغيل" }
+} else { Warn "خط GE SS Two غير مضمّن (مرخّص) — ثبّته من حزمة هوية الوزارة" }
 
 Write-Host ""; Ok "تم. شغّل:  claude   ثم سجّل دخولك بحسابك."

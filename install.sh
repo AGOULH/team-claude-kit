@@ -31,7 +31,7 @@ done
 if [ -f "$CL/skills/blood-donor-whatsapp/SKILL.md" ]; then
   URL=""
   if [ -n "${DONOR_URL:-}" ]; then URL="$DONOR_URL"
-  elif [ -r /dev/tty ]; then read -r -p "رابط صفحة رسائل المتبرعين (Enter للتخطي): " URL < /dev/tty || true; fi
+  elif (: < /dev/tty) 2>/dev/null; then read -r -p "رابط صفحة رسائل المتبرعين (Enter للتخطي): " URL < /dev/tty || true; fi
   if [ -n "${URL:-}" ]; then
     URL="$URL" perl -pi -e 's/\{\{DONOR_SITE_URL\}\}/$ENV{URL}/g' "$CL/skills/blood-donor-whatsapp/SKILL.md" \
       && ok "تم ضبط الرابط" || warn "تعذّر ضبط الرابط"
@@ -67,7 +67,7 @@ if [ ${#F[@]} -gt 0 ]; then
   mkdir -p "$FD"; cp "${F[@]}" "$FD/"; command -v fc-cache >/dev/null && fc-cache -f >/dev/null
   ok "الخطوط: ${#F[@]} ملف"
 else
-  warn "لا توجد خطوط في fonts/ — ضع ملفات GE SS Two هناك وأعد التشغيل"
+  warn "خط GE SS Two غير مضمّن (مرخّص) — ثبّته من حزمة هوية الوزارة"
 fi
 
 echo; ok "تم. شغّل:  claude   ثم سجّل دخولك بحسابك."
